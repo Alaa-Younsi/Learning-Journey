@@ -1,172 +1,582 @@
 
-:root {
-  --color-white: #f3f3f3;
-  --color-darkblue: #1b1b32;
-  --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
-  --color-green: #37af65;
+* {
+    display: flexbox;
+    box-sizing: border-box;  
+    margin: 0;
+    padding: 0;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+html, body {  
+    overflow: hidden;   
+    background-color: black; 
+    line-height: 1;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--color-white);
-  margin: 0;
+#Page {
+    width: 95%;
+    height: 90vh;
+    position: fixed;
+    top: 5%;
+    left: 2.5%;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  background: var(--color-darkblue);
-  background-image: url(blue-red.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+@media screen and (max-width: 600px) {
+    #Page {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
 }
 
-h1 {
-  font-weight: 400;
-  line-height: 1.2;
+.frame {
+    background-color: white;
 }
 
-p {
-  font-size: 1.125rem;
+.frame-top {
+    width: 95%;
+    height: 1px;
+    position: fixed;
+    top: 5%;
 }
 
-h1,
-p {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+@media screen and (max-width: 600px) {
+    .frame-top {
+        width: 92%;
+        height: 0.1px;
+        position: fixed;
+        top: 3%;
+        left: 4%;
+    }
 }
 
-label {
-  display: flex;
-  align-items: center;
-  font-size: 1.125rem;
-  margin-bottom: 0.5rem;
+.frame-bottom {
+    width: 95%;
+    height: 1px;
+    position: fixed;
+    bottom: 5%;
 }
 
-input,
-button,
-select,
-textarea {
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+@media screen and (max-width: 600px) {
+    .frame-bottom {
+        width: 92%;
+        height: 0.1px;
+        position: fixed;
+        bottom: 3%;
+        left: 4%;
+    }
 }
 
-button {
-  border: none;
+.frame-left {
+    width: 1px;
+    height: 90%;
+    position: fixed;
+    left: 2.5%;
+    top: 5%;
 }
 
-.container {
-  width: 100%;
-  margin: 3.125rem auto 0 auto;
+@media screen and (max-width: 600px) {
+    .frame-left {
+        width: 0.1px;
+        height: 94%;
+        position: fixed;
+        left: 4%;
+        top: 3%;
+    }
 }
 
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
+.frame-right {
+    width: 1px;
+    height: 90%;
+    position: fixed;
+    right: 2.5%;
+    top: 5%;
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
+@media screen and (max-width: 600px) {
+    .frame-right {
+        width: 0.1px;
+        height: 94%;
+        position: fixed;
+        right: 4%;
+        top: 3%;
+    }
 }
 
-.header {
-  padding: 0 0.625rem;
-  margin-bottom: 1.875rem;
+#C {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
 }
 
-.description {
-  font-style: italic;
-  font-weight: 200;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+@media screen and (max-width: 600px) {
+    #C {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+    }
 }
 
-.clue {
-  margin-left: 0.25rem;
-  font-size: 0.9rem;
-  color: #e4e4e4;
+#Header {
+    position: fixed;
+    left: 4.5%;
+    top: 8%;
+    z-index: 2;
 }
 
-.text-center {
-  text-align: center;
+@media screen and (max-width: 600px) {
+    #Header {
+        position: fixed;
+        left: 8%;
+        top: 7%;
+    }
 }
 
-form {
-  background: var(--color-darkblue-alpha);
-  padding: 2.5rem 0.625rem;
-  border-radius: 0.25rem;
+.t-text {
+    color: white;
 }
 
-@media (min-width: 480px) {
-  form {
-    padding: 2.5rem;
-  }
+#Title {
+    font-size: 60px;
 }
 
-.form-group {
-  margin: 0 auto 1.25rem auto;
-  padding: 0.25rem;
+@media screen and (max-width: 600px) {
+    #Title {
+        font-size: 35px;
+    }
 }
 
-.form-control {
-  display: block;
-  width: 100%;
-  height: 2.375rem;
-  padding: 0.375rem 0.75rem;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+#DD {
+    font-size: 13px;
+    font-family: sans-serif;
 }
 
-.form-control:focus {
-  border-color: #80bdff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+@media screen and (max-width: 600px) {
+    #DD {
+        font-size: 12px;
+    }
 }
 
-.input-radio,
-.input-checkbox {
-  display: inline-block;
-  margin-right: 0.625rem;
-  min-height: 1.25rem;
-  min-width: 1.25rem;
+#Buttons {
+    margin-top: 21%;
 }
 
-.input-textarea {
-  min-height: 120px;
-  width: 100%;
-  padding: 0.625rem;
-  resize: vertical;
+@media screen and (max-width: 600px) {
+    #Buttons {
+        margin-top: 30%;
+    }
 }
 
-.submit-button {
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  background: var(--color-green);
-  color: inherit;
-  border-radius: 2px;
-  cursor: pointer;
+#Home {
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+}
+
+@media screen and (max-width: 600px) {
+    #Home {
+        position: absolute;
+        top: 55%;
+        right: 6%;
+    }
+}
+
+.Home-p {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5%;
+    font-family: sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+    .Home-p {
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 4%;
+    }
+}
+
+.mainbutton {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-top: 4%;
+}
+
+@media screen and (max-width: 600px) {
+    .mainbutton {
+        font-size: 12px;
+        margin-top: 7%;
+    }
+}
+
+.mainbutton:hover {
+    opacity: 0.5;
+}
+
+#Projects {
+    position: absolute;
+    top: 21.5%;
+    right: 2.5%;
+    text-align: right;
+    width: 40%;
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    #Projects {
+        position: absolute;
+        top: 21.5%;
+        right: 6%;
+        text-align: right;
+        width: 45%;
+    }
+}
+
+#Projects-heading {
+    color: white;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+    #Projects-heading {
+        font-size: 10px;
+    }
+}
+
+.project-title {
+    color: white;
+    font-size: 55px;
+}
+
+@media screen and (max-width: 600px) {
+    .project-title {
+        font-size: 30px;
+    }
+}
+
+.project-info {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+    .project-info {
+        font-size: 10px;
+        margin-right: 0;
+    }
+}
+
+#Projects-list {
+    width: 100%;
+    margin-top: 7%;
+}
+
+@media screen and (max-width: 600px) {
+    #Projects-list {
+        width: 100%;
+        margin-top: 15%;
+    }
+}
+
+.projects-sections {
+    margin-top: 2%;
+}
+
+@media screen and (max-width: 600px) {
+    .projects-sections {
+        margin-top: 6%;
+    }
+}
+
+.projects-sections:hover {
+    opacity: 0.5;
+}
+
+.projects-sections-a {
+    text-decoration: none;
+}
+
+#Front-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+#FP-title {
+    text-align: center;
+    margin-top: 23%;
+}
+
+@media screen and (max-width: 600px) {
+    #FP-title {
+        margin-top: 70%;
+    }
+}
+
+#Alaayounsi {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    #Alaayounsi {
+        font-size: 20px;
+    }
+}
+
+#Portfolio {
+    color: white;
+    font-size: 30px;
+    margin-left: 1%;
+}
+
+@media screen and (max-width: 600px) {
+    #Portfolio {
+        font-size: 20px;
+        margin-left: 3%;
+    }
+}
+
+#Info {
+    Display: none;
+}
+
+.infos {
+    color: white;
+}
+
+#Info1 {
+    position: absolute;
+    top: 5%;
+    right: 2.5%;
+}
+
+@media screen and (max-width: 600px) {
+    #Info1 {
+        position: absolute;
+        top: 21.5%;
+        right: 6%;
+    }
+}
+
+.info1text {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .info1text {
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+    }
+}
+
+.info1text:hover {
+    opacity: 0.5;
+}
+
+#Info2 {
+    position: absolute;
+    top: 20%;
+    right: 25%;
+    width: 40%;
+}
+
+@media screen and (max-width: 600px) {
+    #Info2 {
+        position: absolute;
+        top: 40%;
+        left: 8%;
+        width: 90%;
+    }
+}
+
+#Skills-section {
+    width: 100%;
+}
+
+#Skills-title {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    #Skills-title {
+        font-size: 12px;
+    }
+}
+
+#Skills-title2 {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 5%;
+}
+
+@media screen and (max-width: 600px) {
+    #Skills-title2 {
+        font-size: 12px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 5%;
+    }
+}
+
+.Info2-text1 {
+    margin-top: 2%;
+}
+
+@media screen and (max-width: 600px) {
+    .Info2-text1 {
+        margin-top: 2%;
+        font-size: 10px;
+        margin-right: 5%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .Info2-text1 {
+        margin-top: 4%;
+        font-size: 14px;
+        margin-right: 5%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .Info2-text1 {
+        margin-top: 3%;
+        font-size: 16px;
+        margin-right: 5%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Info2-text1 {
+        margin-top: 2%;
+        font-size: 18px;
+        margin-right: 5%;
+    }
+}
+
+.Info2-text2 {
+    margin-top: 2%;
+    
+}
+
+@media screen and (max-width: 600px) {
+    .Info2-text2 {
+        margin-top: 2%;
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .Info2-text2 {
+        margin-top: 4%;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .Info2-text2 {
+        margin-top: 3%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .Info2-text2 {
+        margin-top: 2%;
+        font-size: 18px;
+    }
+}
+
+#Info3 {
+    position: absolute;
+    top: 82%;
+    right: 2.5%;
+}
+
+@media screen and (max-width: 600px) {
+    #Info3 {
+        position: absolute;
+        top: 75%;
+        right: 6%;
+    }
+}
+
+.sm {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 2%;
+}
+
+@media screen and (max-width: 600px) {
+    .sm {
+        font-size: 12px;
+        margin: 2%;
+    }
+}
+
+.sm:hover {
+    opacity: 0.5;
+}
+
+#Contact {
+    position: absolute;
+    right: 2.5%;
+    top: 93%;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    #Contact {
+        position: absolute;
+        right: 6%;
+        top: 85%;
+        font-size: 12px;
+    }
+}
+
+#Contact:hover {
+    opacity: 0.5;
 }
