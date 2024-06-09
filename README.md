@@ -1,4 +1,4 @@
-#Learning Journey.
+Learning Journey.
 
 Hi, my name is Alaa Younsi aka Syrexl7, I started learning web development & UI/UX design, 
 my goal is to learn as much programming as possible. 
