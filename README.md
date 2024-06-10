@@ -1,6 +1,5 @@
-Learning Journey.
+#1Learning Journey - My expirements lab.
 
-Hi, my name is Alaa Younsi aka Syrexl7, I started learning web development & UI/UX design, 
-my goal is to learn as much programming as possible. 
-
-this website represents my learning journey where i keep track of everything new i learn or work on.
+Hi, my name is Alaa Younsi aka Syrexl7.
+In a mission to learn as much programming and UX/UI design as possible, before jumping into Cyber Security.
+I share here my progress and everything i learn or work on.
